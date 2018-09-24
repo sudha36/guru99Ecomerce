@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="11567" started-at="2018-09-23T17:04:21Z" finished-at="2018-09-23T17:04:33Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="11567" started-at="2018-09-23T17:04:21Z" finished-at="2018-09-23T17:04:33Z">
+      <class name="TestCaseTests.MobilePageTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestCaseTests.MobilePageTest@91161c7]" name="setUp" is-config="true" duration-ms="8566" started-at="2018-09-23T12:04:21Z" finished-at="2018-09-23T12:04:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="Verify_DisabledFields()[pri:15, instance:TestCaseTests.MobilePageTest@91161c7]" name="Verify_DisabledFields" duration-ms="2978" started-at="2018-09-23T12:04:30Z" finished-at="2018-09-23T12:04:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_DisabledFields -->
+      </class> <!-- TestCaseTests.MobilePageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
