@@ -1,16 +1,22 @@
 package webPages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import testBase.TestBase;
+import util.Util;
 
 public class HomePage extends TestBase{
 	
-	 @FindBy(xpath="//*[@id='nav']/ol/li[1]/a")
-	 WebElement MobileBtn;
+	/* @FindBy(xpath="//*[@id='nav']/ol/li[1]/a")
+	 WebElement MobileBtn;*/
+	
+	@FindBy(xpath = "//a[text()='Mobile']")
+	WebElement MobileLink;
 	 
 	 @FindBy(xpath="//span[@class='label'][contains(text(),'Account')]")
 	 WebElement AccountBtn;
@@ -28,7 +34,7 @@ public class HomePage extends TestBase{
 	 @FindBy(xpath="//a[contains(text(),'TV')]")
 	 WebElement TVBtn;
 	 
-	 @FindBy(xpath="/html/body/div/div/div[3]/div/div[3]/ul/li[3]/a")
+	 @FindBy(xpath="//a[@title='Advanced Search']")
 	 WebElement AdvancedSearchBtn;
 	 
 	
@@ -39,11 +45,17 @@ public class HomePage extends TestBase{
 	 public String validateHomePageTitle(){
 			return driver.getTitle();
 		}
-	 // Click on MobileBtn
+	 /*// Click on MobileBtn
 	 public MobilePage clickMobileBtn() {
 		 MobileBtn.click();
 		 return new MobilePage();
-	 }
+	 }*/
+	 
+	// Click on MobileLink
+		public MobilePage ClickOnMobile() {
+			MobileLink.click();
+			return new MobilePage();
+		}
 	 
 	/* public String RegistrationMessge() {
 		 return RegistrationMessge.getText();
@@ -73,6 +85,10 @@ public class HomePage extends TestBase{
 	 
 	//Click AdvancedSearch link on the home page and then it goes to Advanced SearchPage	 
 		 public AdvancedSearchPage click_AdvancedSearchBtn() {
+			 /*WebElement element = driver.findElement(By.xpath("//span[contains(text(),'Quick Links')]"));	 
+			 Actions action = new Actions(driver); 
+		        action.moveToElement(element).build().perform(); 
+		        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[3]/ul[1]/li[3]/a[1]")).click();*/
 			 AdvancedSearchBtn.click();
 			 return new AdvancedSearchPage();
 		 }

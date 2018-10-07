@@ -3,12 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="TestCaseTests.MobilePageTest">
+      <class name="TestCaseTests.BackendTestCases">
         <methods>
+          <include name="setExtent"/>
+          <include name="endReport"/>
+          <include name="setResults"/>
+          <include name="Verify_Search_Functionality"/>
           <include name="setUp"/>
-          <include name="Verify_DisabledFields"/>
         </methods>
-      </class> <!-- TestCaseTests.MobilePageTest -->
+      </class> <!-- TestCaseTests.BackendTestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -60,7 +60,7 @@ public class BrowserAlertHelper {
 	}
 
 	// get window Text
-	public static void SwitchWindow(WebDriver driver) throws IOException {
+	public static void SwitchWindow(WebDriver driver)  {
 		Set<String> handler = driver.getWindowHandles();
 		Iterator<String> it = handler.iterator();
 		String parentWindowId = it.next();
@@ -74,7 +74,12 @@ public class BrowserAlertHelper {
 			e.printStackTrace();
 		}
 		System.out.println("child window pop up title :" + " " + driver.getTitle());
-		Util.ScreenCapture();
+		try {
+			Util.ScreenCapture();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		driver.close();
 		driver.switchTo().window(parentWindowId);
 		System.out.println("parent window title :" + " " + driver.getTitle());

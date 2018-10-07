@@ -40,7 +40,9 @@ import webPages.ShoppingCartPage;
 import webPages.TVPage;
 import webPages.WishListSharingPage;
 
-	public class MobilePageTest extends TestBase {
+	public class TestCases extends TestBase {
+		
+		// Creating a variable for Pages
 		
 		AdvancedSearchPage advancedSearchPage;
 		HomePage homePage;
@@ -65,10 +67,35 @@ import webPages.WishListSharingPage;
 		BrowserAlertHelper browserAlertHelper;
 		Util util;
 		
-		public MobilePageTest(){
+		// Calling the TestBase Constructor
+		public TestCases(){
 			super();
+			
 		}
+			/*advancedSearchPage = new AdvancedSearchPage();
+			homePage = new HomePage();
+			mobilePage = new MobilePage();
+			detailsPage = new DetailsPage();
+			shoppingCartPage = new ShoppingCartPage();
+			createNewAccountPage = new CreateNewAccountPage();
+			logintoMagnetoAdminPage = new LogintoMagnetoAdminPage();
+			manageCustomerPage = new ManageCustomerPage();
+			ordersSalesPage = new OrdersSalesPage();
+			invoiceSalesPage = new InvoiceSalesPage();
+			customerDetailManageCustomersPage = new CustomerDetailManageCustomersPage();
+			checkOutPage =new CheckOutPage();
+			myAccountPage = new MyAccountPage();
+			myWishListPage = new MyWishListPage();
+			myOrdersPage = new MyOrdersPage();
+			orderNumberPage = new OrderNumberPage();
+			tvPage = new TVPage();
+			customerLoginPage= new CustomerLoginPage();
+			wishListSharingPage = new WishListSharingPage();
+			magentoCommercePage =new MagentoCommercePage();
+			browserAlertHelper = new BrowserAlertHelper();
+			util = new Util();*/
 		
+		// Calling TestBase Functions and Creating Page Objects
 		@BeforeMethod
 		public void setUp(){
 			initialization();
@@ -94,36 +121,42 @@ import webPages.WishListSharingPage;
 			magentoCommercePage =new MagentoCommercePage();
 			browserAlertHelper = new BrowserAlertHelper();
 			util = new Util();
+			//homePage.ClickOnMobile();
 			//homePage.clickMobileBtn();
 		}
 		
-		/*@Test(priority=1)
+		@Test(priority=1)
 		public void homePageTitleTest(){
+			//homePage.clickMobileBtn();
+			extentTest = extentReports.startTest("homePageTitleTest");
 			String title = homePage.validateHomePageTitle();
 			Assert.assertEquals(title, "Home page");
-			homePage.clickMobileBtn();
+			System.out.println(title);
+			homePage.ClickOnMobile();
 			String title1 = mobilePage.validateMobilePageTitle();
 			Assert.assertEquals(title1, "Mobile");
+			System.out.println(title1);
 			mobilePage.ClickNameField();
 			
 		}
 		
 		@Test(priority=2)
 		public void VerifyCostinTwoPages(){
-			
-			homePage.clickMobileBtn();
+			extentTest = extentReports.startTest("VerifyCostinTwoPages");
+			homePage.ClickOnMobile();
 			mobilePage.ValueofSonyxperia();
 			mobilePage.ClickSonyXperia();
 			String title=detailsPage.SonyXperiaMobilePricetest();
 			Assert.assertEquals(title, "$100.00");
-		}*/
+		}
 		
 		//Error verification Test 
-		/*@Test(priority=3)
+		@Test(priority=3)
 		
 		public void ErrorVerificationTest() {
+			extentTest = extentReports.startTest("ErrorVerificationTest");
+			homePage.ClickOnMobile();
 			
-			homePage.clickMobileBtn();
 			mobilePage.ClickSonyXperiaAddtoCartBtn();
 			shoppingCartPage.ChangeQuantity();
 			shoppingCartPage.ClickUpdateBtn();
@@ -133,21 +166,20 @@ import webPages.WishListSharingPage;
 			String Title = shoppingCartPage.VerifyEmptyCartMsg();
 			System.out.println(Title);
 			Assert.assertEquals(Title, "You have no items in your shopping cart.");
-		}*/
+		}
 		
 		//Comparing two products and verifing the messege
-		/*@Test(priority=4)
-		public void VerifycompareProducts() throws IOException {
-			homePage.clickMobileBtn();
+		@Test(priority=4)
+		public void VerifycompareProducts()  {
+			extentTest = extentReports.startTest("VerifycompareProducts");
+			//homePage.clickMobileBtn();
+			homePage.ClickOnMobile();
+			
             mobilePage.VerifyCompareProduct();
 		    
-		    /*m.ClickSonyXperiaAddtoCartBtn();
-		    mobilePage.ClickSonyXperiaAddtoCompareBtn();
-		    mobilePage.ClickIphoneAddtoCompareBtn();
-		    mobilePage.ClickCompareBtn();
-		    browserAlertHelper.SwitchWindow(driver);
-		    util.drawBorder(Sony, driver);*/
-		
+		 
+		   
+		}
 		@DataProvider
 		public Object[][] GetData() {
 			Object data[][] = Util.getTestData("Sheet1");
@@ -155,10 +187,11 @@ import webPages.WishListSharingPage;
 	}  
 		
 		// Account Creation
-		/*@Test(priority =5, dataProvider="GetData")
+		@Test(priority =5, dataProvider="GetData")
 		
 		public void AccountCreationTest(String FirstName, String MiddleName, String LastName, String EmailAddress, String PassWord, String ConfirmPwd) {
-			homePage.clickMobileBtn();
+			extentTest = extentReports.startTest("AccountCreationTest");
+			homePage.ClickOnMobile();
 			homePage.clickHomeRegisterBtn();
 			createNewAccountPage.FillAcctDetails(FirstName, MiddleName, LastName, EmailAddress,PassWord, ConfirmPwd);
 			//String RegistraionMsg = myAccountPage.RegistrationMessge();
@@ -171,12 +204,13 @@ import webPages.WishListSharingPage;
 			Assert.assertEquals(myWishListPage.VerifySharedMsg(), "Your Wishlist has been shared.");
 			
 			
-		}*/
+		}
 		
 		//PurchaseProduct
-		//@Test(priority = 6)
+		@Test(priority = 6)
 		
-		/*public void PurchaseProduct() {
+		public void PurchaseProduct() {
+			extentTest = extentReports.startTest("PurchaseProduct");
 			homePage.clickAccountBtn();
 			customerLoginPage.LoginCredentials();
 			try {
@@ -194,12 +228,13 @@ import webPages.WishListSharingPage;
 			magentoCommercePage.Draw_Border_Number();
 			
 			
-		}*/
+		}
 		
 		//View PDF File
-		/*@Test(priority=7)
+		@Test(priority=7)
 		
 		public void PDFFile() {
+			extentTest = extentReports.startTest("PDFFile");
 			homePage.clickAccountBtn();
 			customerLoginPage.LoginCredentials();
 			try {
@@ -215,11 +250,12 @@ import webPages.WishListSharingPage;
 			//Assert.assertEquals(orderNumberPage.Verify_Pending_Status(), "orderNumberPage.GetTitle_OrderNumber_Page()");
 			orderNumberPage.Click_PrintOrder();
 			
-			}*/
+			}
 		
 		//RE_Order TestCase
-		/*@Test(priority=8)
+		@Test(priority=8)
 		public void ReOrder() {
+			extentTest = extentReports.startTest("ReOrder");
 			homePage.clickAccountBtn();
 			customerLoginPage.LoginCredentials();
 			try {
@@ -233,72 +269,31 @@ import webPages.WishListSharingPage;
 			checkOutPage.ClickBillingInfoContinueBtn();
 			magentoCommercePage.Generated_OrderNumber_8();
 			
-		}*/
+		}
 		
 		//Discount Coupon and Verify the GrandTotal
-		/*@Test(priority = 9)
+		@Test(priority = 9)
 		public void VerifyGrandTotalDiscountCoupon() {
-			homePage.clickMobileBtn();
+			extentTest = extentReports.startTest("VerifyGrandTotalDiscountCoupon");
+			homePage.ClickOnMobile();
 			mobilePage.ClickIphoneAddtoCart();
 			shoppingCartPage.DisCount_Coupon_Apply();
 		}
-		*/
 		
 		
-		//Email
-		/*@Test(priority=10)
-        public void Email_Report() {
-			logintoMagnetoAdminPage.Login_Function();
-			manageCustomerPage.Perform_Actions_Click_Sales_Orders();
-			ordersSalesPage.Exporting_Email_File();
-		}
-		*/
-		//Print-Invoice
-		/*@Test(priority=11)
-		public void Print_Invoices() throws AWTException {
-			logintoMagnetoAdminPage.Login_Function();
-			manageCustomerPage.Perform_Actions_Click_Sales_Orders();
-			ordersSalesPage.Verify_Invoice();
-			//Assert.assertEquals(ordersSalesPage.Invoice_Err_Msg(), "There are no printable documents related to selected orders.");
-			Robot robotObject = new Robot();
-			robotObject.keyPress(KeyEvent.VK_TAB);
-			robotObject.keyPress(KeyEvent.VK_ENTER);
-			try {
-				ReadPdfFile.ReadPdfFiles("100000005");
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}*/
-	//	}
 		
-		//Sorting Fuctionality
-		/*@Test(priority=13)
-        public void Sort_Functionality() {
-			logintoMagnetoAdminPage.Login_Function();
-			manageCustomerPage.Perform_Actions_Click_Sales_Invoice();
-			invoiceSalesPage.Click_InvoiceDate();
-			
-		}*/
 		
-		/*@Test(priority=14)
+		@Test(priority=14)
 		public void Verify_Search_Functionality() {
+			extentTest = extentReports.startTest("Verify_Search_Functionality");
 			homePage.click_AdvancedSearchBtn();
 			advancedSearchPage.Price_Range("0","150");
 			magentoCommercePage.Verify_Sony_Functionality();
 			magentoCommercePage.Verify_Samusung_Functionality();
-		}*/
-		
-		@Test(priority=15)
-	    public void Verify_DisabledFields() {
-			logintoMagnetoAdminPage.Login_Function();
-			manageCustomerPage.Perform_Actions_Click_CustomersTab();
-			customerDetailManageCustomersPage.Verify_DisabledFields();
-			customerDetailManageCustomersPage.verifyNewPwdIsEmpty();
 		}
-		/*@AfterMethod
-		public void closeBrowser() {
-			driver.close();
-		}*/
+		
+		
+		
 }
 
 	

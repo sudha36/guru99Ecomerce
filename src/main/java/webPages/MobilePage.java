@@ -29,13 +29,13 @@ public class MobilePage extends TestBase{
 	 @FindBy(xpath=".//*[@id='top']/body/div[1]/div/div[2]/div/div[2]/div[1]/div[3]/ul/li[1]/div/div[3]/button")
 	 WebElement SonyXperiaAddtoCartBtn;
 	 
-	 @FindBy(xpath="/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/ul[1]/li[1]/div[1]/div[3]/ul[1]/li[2]/a[1]")
+	 @FindBy(xpath="//span[contains(text(), '$100')]//following::a[3]")
 	 WebElement SonyXperiaAddtoCompareBtn;
 	 
-	 @FindBy(xpath="/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/ul[1]/li[2]/div[1]/div[3]/ul[1]/li[2]/a[1]")
+	 @FindBy(xpath="//span[contains(text(), '$500')]//following::a[3]")
 	 WebElement IphoneAddtoCompareBtn;
 	 
-	 @FindBy(xpath="//button[@title='Compare']")
+	 @FindBy(xpath="/html/body/div[1]/div/div[2]/div/div[3]/div[1]/div[2]/div/button")
 	 WebElement CompareBtn;
 	 
 	 @FindBy(xpath="//span[contains(text(), '$100.00')]")
@@ -90,19 +90,33 @@ public class MobilePage extends TestBase{
 	  return new ShoppingCartPage();
 	 }
 
-  public void VerifyCompareProduct() throws IOException {
+  public void VerifyCompareProduct()  {
+	  Util.scrollPageDown(driver);
 	  SonyXperiaAddtoCompareBtn.click();
 	  IphoneAddtoCompareBtn.click();
-	  CompareBtn.click();
-	  BrowserAlertHelper.SwitchWindow(driver);
-	  Util.ScreenCapture();
-	  Util.drawBorder(SonyXperiaPrice, driver);
-	  Util.drawBorder(IphonePrice, driver);
-	 // CloseBtn.click();
+	  try {
+		Thread.sleep(2000);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	 CompareBtn.click();	 
+		BrowserAlertHelper.SwitchWindow(driver);
+		Util.drawBorder(SonyXperiaPrice, driver);
+		  Util.drawBorder(IphonePrice, driver);
+	
+	  try {
+		Util.ScreenCapture();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	 
+  } 
 	  
-	 	 }
+	 	
   
-  //Click on Iphone AddtoCart
+  
   
   public ShoppingCartPage ClickIphoneAddtoCart() {
 	  IphoneAddtoCart.click();

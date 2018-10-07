@@ -8,7 +8,7 @@ import testBase.TestBase;
 
 public class MyOrdersPage extends TestBase {
 	
-	 @FindBy(xpath = "//a[@href='http://live.guru99.com/index.php/sales/order/view/order_id/7926/']")
+	 @FindBy(xpath ="//a[text()='View Order']")
 	 WebElement ViewOrderLink;
 	 
 	 public MyOrdersPage(){

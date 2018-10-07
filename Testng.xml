@@ -1,0 +1,53 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test Automation Test Suite">
+
+
+<listeners>
+<listener class-name="Listener.Listener"></listener>
+<listener class-name="Analyzer.MyTransform"></listener>
+</listeners>
+
+<test name="TestCases">
+	<classes>
+		<class name="TestCaseTests.TestCases">
+		<methods>
+		<include name="homePageTitleTest"></include>
+		<include name="VerifyCostinTwoPages"></include>
+		<include name="ErrorVerificationTest"></include>
+		<include name="VerifycompareProducts"></include>
+		<include name="AccountCreationTest"></include>
+		<include name="PurchaseProduct"></include>
+		<include name="PDFFile"></include>
+		<include name="ReOrder"></include>
+		<include name="VerifyGrandTotalDiscountCoupon"></include>
+		
+		</methods>
+		
+		</class>
+		</classes>
+		
+		</test>
+		
+		<test name="BackendTestCasess">
+		<classes>
+	
+		<class name="TestCaseTests.BackendTestCases">
+		
+		<methods>
+		
+		<include name="Email_Report"></include>
+		<include name="Print_Invoices"></include>
+		<include name="Sort_Functionality"></include>
+		<include name="Verify_Search_Functionality"></include>
+		<include name="Verify_DisabledFields"></include>
+		
+		</methods>
+		</class>
+			
+	</classes>
+</test>
+
+
+
+</suite>
+

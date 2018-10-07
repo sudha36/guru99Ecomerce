@@ -31,7 +31,18 @@ public class ManageCustomerPage extends TestBase{
 	@FindBy(xpath="/html/body/div[1]/div[4]/div/div[3]/div/div[2]/div/table/tbody/tr[1]/td[4]")
 	WebElement Click_NameontheCustomers;
 	
-	//html/body/div[1]/div[4]/div/div[3]/div/div[2]/div/table/tbody/tr[2]/td[4]
+	@FindBy(xpath="/html/body/div[1]/div[1]/div[3]/ul/li[2]/a/span")
+	WebElement Catalog;
+	
+	@FindBy(xpath="//span[contains(text(),'Reviews and Ratings')]")
+	WebElement ReviewandRatings;
+	
+	@FindBy(xpath="//span[contains(text(),'Customer Reviews')]")
+	WebElement CustomerReviews;
+	
+	@FindBy(xpath="//span[contains(text(),'Pending Reviews')]")
+	WebElement PendingReviews;
+	
 	
 	public ManageCustomerPage() {
 		PageFactory.initElements(driver, this);

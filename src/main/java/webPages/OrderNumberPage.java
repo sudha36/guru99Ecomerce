@@ -12,13 +12,13 @@ import util.Util;
 public class OrderNumberPage extends TestBase{
 	
 	 
-	 @FindBy(xpath = "//h1[contains(text(),'Order #100007880 - Pending')]")
+	 @FindBy(xpath = "//h1[contains(text(),'Order #10000')]")
 	 WebElement PendingStatus;
 	 
 	 @FindBy(xpath = "//a[@class='link-print']")
 	 WebElement PrintOrderLink;
 	 
-	 @FindBy(xpath ="//h1[contains(text(),'Order #100007880')]")
+	 @FindBy(xpath ="//h1")
 	 WebElement OrderNumber;
 	 
 	 public OrderNumberPage(){
@@ -43,12 +43,9 @@ public class OrderNumberPage extends TestBase{
 	 //Clicking on PrintOrder
 	 public void Click_PrintOrder() {
 		 	 PrintOrderLink.click();
-		 	try {
+		 	
 				BrowserAlertHelper.SwitchWindow(driver);
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+			
 			Util.drawBorder(OrderNumber, driver);
 			try {
 				Util.ScreenCapture();
